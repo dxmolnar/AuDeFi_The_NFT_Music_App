@@ -80,6 +80,7 @@ for artist_name, artist_data in artist_profiles.items():
         st.sidebar.write(f"- {song}")
     st.sidebar.text(" \n")
     
+###### Daniel #######    
 # Initialize Web3
 # ganache_url = "http://127.0.0.1:7545" 
 web3 = Web3(Web3.HTTPProvider("http://127.0.0.1:7545"))
@@ -573,6 +574,8 @@ contract_abi = [
 # Contract instance
 contract = web3.eth.contract(address=contract_address, abi=contract_abi)
 
+###### Kevin #######
+
 # Streamlit UI
 st.title("AuDeFi NFT Music App")
 st.markdown("## Mint, Buy & Sell Your Favorite Tunes!")
@@ -666,7 +669,22 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+###### Kevin #####
 
+# Validate NFT section
+st.text(" \n")
+st.markdown("## Validate NFT")
+
+# Address input field
+nft_address = st.text_input("Enter NFT Address")
+
+# Validate button
+if st.button("Validate"):
+    if nft_address:
+        # Here you can implement your validation logic
+        st.write(f"Validating NFT at address: {nft_address}")
+    else:
+        st.warning("Please enter an NFT address to validate")
 
 
 
