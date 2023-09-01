@@ -2,7 +2,7 @@ import streamlit as st
 import boto3
 from web3 import Web3
 
-# Set page configuration
+# Setting page configuration
 st.set_page_config(
     page_title="AuDeFi NFT Music App",
     page_icon="🎵",
@@ -26,7 +26,7 @@ st.markdown(
 )
 
 # Left side: Royalties and Staking
-# st.sidebar.text(" ")  # Adds spacing
+# st.sidebar.text(" ")
 
 # Loading and displaying the "Broken Record.png" image
 broken_record_image = "./images/Broken Record.png" 
@@ -622,7 +622,7 @@ if uploaded_file:
         nonce = web3.eth.get_transaction_count(user_account)
         gas_price = web3.to_wei('1', 'gwei')
         tx = contract.functions.mint(ipfs_hash).build_transaction({
-            'chainId': 1337,  # Update with your Ganache chain ID
+            'chainId': 1337, 
             'gas': 2000000,
             'gasPrice': gas_price,
             'nonce': nonce,
@@ -681,7 +681,6 @@ nft_address = st.text_input("Enter NFT Address")
 # Validate button
 if st.button("Validate"):
     if nft_address:
-        # Here you can implement your validation logic
         st.write(f"Validating NFT at address: {nft_address}")
     else:
         st.warning("Please enter an NFT address to validate")
