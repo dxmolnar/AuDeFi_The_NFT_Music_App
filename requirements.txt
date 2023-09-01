@@ -1,0 +1,5 @@
+Necessary: 
+
+python==3.11.3
+Pragma solidity==0.8.21
+Web3==6.9
