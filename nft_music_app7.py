@@ -14,7 +14,7 @@ st.markdown(
     f"""
     <style>
         .reportview-container {{
-            background: url('./Images/audefibackg.png'); 
+            background: url('./Images/audefibkg.png'); 
             background-size: cover;
         }}
         .sidebar {{
@@ -76,8 +76,8 @@ for artist_name, artist_data in artist_profiles.items():
     st.sidebar.image(artist_data["logo"], width=200)
     st.sidebar.write("Artist:", artist_name)
     st.sidebar.write("Songs:")
-    for song in artist_data["songs"]:
-        st.sidebar.write(f"- {song}")
+    for index, song in enumerate(artist_data["songs"], start=1):
+        st.sidebar.write(f"{index}. {song}")
     st.sidebar.text(" \n")
     
 ###### Daniel #######    
